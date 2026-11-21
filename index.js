@@ -7,8 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 const app = express();
 app.use(cors());
 app.use(express.json());
-mongoose.connect(process.env.MONGO_URI,{
-    useNewParser: true, useUnifiedTopology:true}).then(() => console.log("MongoDB connecte"))
+mongoose.connect(process.env.MONGO_URI).then(() => console.log("MongoDB connecte"))
     .catch(err => console.error("Erreur MongoDB:", err))
     app.use("/api/todos", todoRoutes);
     app.use("/api/auth", authRoutes);

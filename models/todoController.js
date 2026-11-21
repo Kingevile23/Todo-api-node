@@ -1,4 +1,4 @@
-const Todo = require("models\Todo")
+const Todo = require("./Todo");
 exports.getTodos = async(req, res) => {
     const todos = await Todo.find({ userId: req.userId})
     res.json(todos)
